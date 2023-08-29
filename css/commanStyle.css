@@ -1,0 +1,304 @@
+:root {--n: 1;}
+
+
+.cart .content_cart,
+.favorite .content_favo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column-reverse;
+    gap: 20px;
+}
+
+.cart aside,
+.favorite aside {
+    width: 74%;
+    background-color: var(--salmon-pink);
+    border-radius: var(--border-radius-md);
+    padding: 5px;
+    position: static;
+    top: 10px;
+}
+
+.cart aside button,
+.favorite aside button {
+    color: var(--eerie-black);
+    background-color: var(--cultured);
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    font-size: var(--fs-7);
+}
+
+.cart aside button:hover,
+.favorite aside button:hover
+{color: #fff}
+
+
+.favorite #product_favo .contain_product_favo .item .product_action ul li
+{
+    color: var(--eerie-black);
+}
+
+.cart,
+.cart .content_cart #product_cart_region,
+.favorite,
+.favorite .content_favo #product_favo_region,
+.men,
+.men .content_men #product_men_region,
+.women,
+.women .content_women #product_women_region,
+.jewelry,
+.jewelry .content_jewelry #product_jewelry_region,
+.perfume,
+.perfume .content_perfume #product_perfume_region
+{
+    margin-bottom: 40px;
+}
+/*  */
+.men .content_men .content_produc_main_men,
+.women .content_women .content_produc_main_women,
+.jewelry .content_jewelry .content_produc_main_jewelry,
+.perfume .content_perfume .content_produc_main_perfume {
+    margin: 20px 0;
+    padding: 20px 0;
+}
+/*  */
+.cart .content_cart h2,
+.favorite .content_favo h2,
+.men .content_men h2,
+.women .content_women h2,
+.jewelry .content_jewelry h2,
+.perfume .content_perfume h2 {
+    color: var(--eerie-black);
+    font-size: var(--fs-5);
+    font-weight: 600;
+    letter-spacing: .4px;
+    text-transform: capitalize;
+    border-bottom: 1px solid var(--cultured);
+    padding-bottom: 15px;
+    margin-bottom: 30px;
+}
+/*  */
+
+.cart .content_cart #price {margin-top: -30px}
+
+/*  */
+.cart .content_cart .content_Product,
+.favorite .content_favo .content_Product,
+.men .content_men .content_Product,
+.women .content_women .content_Product,
+.jewelry .content_jewelry .content_Product,
+.perfume .content_perfume .content_Product {
+    width: 100%;
+    color: var(--eerie-black);
+    margin: auto;
+}
+
+.favorite .content_favo .content_Product,
+.cart .content_cart .content_Product {
+    width: 73.4%;
+}
+
+.cart #product_cart_region .contain_product_cart,
+.favorite #product_favo_region .contain_product_favo,
+.men #product_men_region .contain_product_men,
+.women #product_women_region .contain_product_women,
+.jewelry #product_jewelry_region .contain_product_jewelry,
+.perfume #product_perfume_region .contain_product_perfume {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 30px;
+}
+
+/* cart & favo different from other in grid-template-columns */
+.cart #product_cart_region .contain_product_cart,
+.favorite #product_favo_region .contain_product_favo {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.cart #product_cart .contain_product_cart,
+.favorite #product_favo .contain_product_favo,
+.men #product_men .contain_product_men,
+.women #product_women .contain_product_women,
+.jewelry #product_jewelry .contain_product_jewelry,
+.perfume #product_perfume .contain_product_perfume {
+    min-width: 100%;
+    overflow: auto hidden;
+    scroll-snap-type: inline mandatory;
+    overscroll-behavior-inline: contain;
+    display: flex;
+    gap: 18px;
+    padding-bottom: 8px;
+}
+
+.cart #product_cart .contain_product_cart,
+.favorite #product_favo .contain_product_favo {
+    gap: 8px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid var(--cultured);
+    border-radius: var(--border-radius-md);
+    padding: 2px;
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition-timing);
+    cursor: pointer;
+}
+
+
+.cart #product_cart .contain_product_cart .item,
+.favorite #product_favo .contain_product_favo .item,
+.men .content_men #product_men .contain_product_men .item,
+.women .content_women #product_women .contain_product_women .item,
+.jewelry .content_jewelry #product_jewelry .item,
+.perfume .content_perfume #product_perfume .item {
+    min-width: calc(97% / var(--n));
+    scroll-snap-align: start;
+}
+
+.men .content_men #product_men .contain_product_men .item {
+    min-width: calc(98% / var(--n));
+}
+
+.cart #product_cart .contain_product_cart .item,
+.favorite #product_favo .contain_product_favo .item {
+    min-width: calc(99% / 1);
+}
+
+.item img:nth-child(2) {
+    position: absolute;
+    opacity: 0;
+    transition: var(--transition-timing);
+}
+
+.item:hover{
+    box-shadow: 0 0 10px hsl(0deg 0% 0% / 10%);
+}
+
+.item:hover img:nth-child(2) {
+    opacity: 1;
+}
+
+.item:hover .product_action{
+    right: 10px;
+}
+
+.item .product_action {
+    position: absolute;
+    right: -34px;
+    top: 10px;
+    transition: var(--transition-timing);
+}
+
+.item .product_action ul li {
+    background-color: #fff;
+    border: 1px solid var(--cultured);
+    border-radius: var(--border-radius-sm);
+    padding: 6.5px 5.5px;
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition-timing);
+    cursor: pointer;
+}
+
+.item .product_action ul li:hover {
+    color: #fff !important;
+    background-color: var(--eerie-black) !important;
+    border-color: var(--eerie-black) !important;
+}
+
+.item .details {
+    padding: 0 6px 15px 20px;
+    cursor: auto;
+}
+
+.item h3 {
+    color: var(--salmon-pink);
+    font-size: var(--fs-8);
+    font-weight: var(--weight-500);
+    text-transform: uppercase;
+}
+
+.item .desc {
+    color: var(--sonic-silver);
+    font-size: var(--fs-7);
+    font-weight: var(--weight-300);
+    text-transform: capitalize;
+    letter-spacing: .5px;
+    padding: 10px 0 3px;
+}
+
+.item .stars i {
+    font-size: 14px;
+}
+
+.item .price_product {
+    color: var(--eerie-black);
+    font-size: var(--fs-7);
+    margin-top: 5px;
+}
+
+.item .price_product del {
+    color: var(--sonic-silver);
+}
+
+
+/* Media Query */
+/* 
+min-width: 480px;
+min-width: 570px;
+min-width: 768px;
+min-width: 1024px;
+
+ */
+
+@media ( min-width: 411px ) {
+    :root {--n: 2}
+
+    .men .content_men #product_men .contain_product_men {
+        gap: 8px;
+    }
+
+    .women .content_women #product_women .contain_product_women,
+    .jewelry .content_jewelry #product_jewelry .contain_product_jewelry,
+    .perfume .content_perfume #product_perfume .contain_product_perfume {
+        gap: 10px;
+    }
+}
+
+@media (min-width: 640px ) {
+    :root {--n: 3}
+
+    .men .content_men #product_men .contain_product_men {
+        gap: 5px;
+    }
+
+    .women .content_women #product_women .contain_product_women,
+    .jewelry .content_jewelry #product_jewelry .contain_product_jewelry,
+    .perfume .content_perfume #product_perfume .contain_product_perfume {
+        gap: 8px;
+    }
+}
+
+@media (min-width: 992px ) {
+    :root {--n: 4}
+    .men .content_men #product_men .contain_product_men {
+        padding-right: 2px;
+    }
+}
+
+
+@media (min-width: 1024px ) {
+    .men #product_men .contain_product_men .item,
+    .women #product_women .contain_product_women .item,
+    .jewelry #product_jewelry .contain_product_jewelry .item,
+    .perfume #product_perfume .contain_product_perfume .item {
+        gap: 5px;
+    }
+}
